@@ -1,12 +1,12 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom'; // <--- Add useLocation
 
 import Navbar from './components/Navbar';
 import About from './components/About';
 import LoginSignup from './components/LoginSignup';
 import Predict from './components/Predict';
 import Footer from './components/Footer';
-import asthmaImage from './components/asthma.jpg'; // Ensure this path is correct
+import asthmaImage from './components/asthma.jpg';
 import './components/Home.css';
 import './App.css';
 import './components/Navbar.css';
@@ -25,13 +25,45 @@ const Home = () => (
       health data such as oxygen levels, medication use, and cough intensity. This can assist healthcare
       providers in taking proactive measures for better patient care.
     </p>
+    <p>
+      Do You have asthma? Click the button below to find out!
+    </p>
+
+    {/* Predict Button */}
+    <div className="predict-container">
+      <button 
+        className="predict-button"
+        onClick={() => {
+          alert("You have to log in first to predict if you have asthma.");
+          window.location.href = "http://localhost:3000/login";
+        }}
+      >
+        Predict
+      </button>
+    </div>
+
+    {/* Additional Information Links */}
+    <div className="resource-links">
+      <p>Want to learn more? Check out these resources:</p>
+      <a href="https://www.who.int/news-room/fact-sheets/detail/asthma" target="_blank" rel="noopener noreferrer">WHO - Asthma Facts</a>
+      <a href="https://www.cdc.gov/asthma/default.htm" target="_blank" rel="noopener noreferrer">CDC - Asthma Resources</a>
+      <a href="https://www.mayoclinic.org/diseases-conditions/asthma/symptoms-causes/syc-20369653" target="_blank" rel="noopener noreferrer">Mayo Clinic - Asthma Overview</a>
+    </div>
   </div>
 );
 
+
+
 function App() {
+  const location = useLocation(); // <--- Use this hook
+
+  // Hide footer on /login route
+  const hideFooterRoutes = ['/login'];
+  const shouldHideFooter = hideFooterRoutes.includes(location.pathname);
+
   return (
-    <Router>
-      <Navbar /> {/* Always visible */}
+    <>
+      <Navbar />
       <ToastContainer />
       <div className="main-content">
         <Routes>
@@ -41,8 +73,8 @@ function App() {
           <Route path="/predict" element={<Predict />} />
         </Routes>
       </div>
-      <Footer />
-    </Router>
+      {!shouldHideFooter && <Footer />}
+    </>
   );
 }
 

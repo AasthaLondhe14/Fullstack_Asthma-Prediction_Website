@@ -4,12 +4,12 @@
   left: 0;
   right: 0;
   height: 60px;
-  background-color: #0c0c0c;
+  background-color: #2e15d2;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 2rem;
-  color: white;
+  color: rgb(255, 255, 255);
   z-index: 1000;
 }
 
@@ -28,7 +28,7 @@
 
 .nav-links a,
 .nav-links button {
-  color: white;
+  color: rgb(255, 255, 255);
   background: none;
   border: none;
   cursor: pointer;

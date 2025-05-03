@@ -3,12 +3,16 @@
   bottom: 0;
   left: 0;
   width: 100%;              /* Full width */
-  background-color: #090909;
+  background-color: #2110a2;
   color: white;
   padding: 20px 0;
   text-align: center;
   z-index: 999;             /* Keep above content */
   box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 25px 0;
+    font-size: 14px;
+    border-top: 1px solid #c0e0f5;
 }
 
 .footer p {
@@ -27,4 +31,7 @@
 
 .footer-about-link:hover {
   color: #f07540;
+}
+.footer a{
+  margin-left: 6px;
 }

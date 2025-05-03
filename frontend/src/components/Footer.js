@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <p>&copy; Asthma Predictor</p>
-      <a href="/about" className="footer-about-link">About Us</a>
+      <a href="/about" className="footer-about-link">About Our Project</a>
     </footer>
   );
 };

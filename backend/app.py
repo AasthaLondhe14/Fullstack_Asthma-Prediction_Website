@@ -4,10 +4,8 @@ from flask_cors import CORS
 import joblib
 import pandas as pd
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
-
 app = Flask(__name__)
 CORS(app)
-
 # Load model and encoders
 model = joblib.load('knn_model.pkl')
 le_gender = joblib.load('le_gender.pkl')

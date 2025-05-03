@@ -11,6 +11,7 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f8fb;
     color: #000000;
+    overflow-x: hidden;
   }
   
   /* Main container */
@@ -18,31 +19,38 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    margin-top: 300px;
+    margin-top: 0px;
+  
   }
   
   /* Header */
   .about-header {
-    background: linear-gradient(to right, #005b99, #0073e6);
+    background: linear-gradient(to right, #555a5e, #000000);
     color: #060606;
     text-align: center;
-    padding: 50px 20px;
-  }
+    margin-top: 20px;
+    padding: 20px;
+    width: 100%;
+    position: relative;
+    
+} 
   
   .about-header h1 {
     font-size: 3.5vw;
     margin-bottom: 10px;
+    color: #ffffff;
   }
   
   .about-header p {
     font-size: 1.5vw;
     opacity: 0.9;
+    color: #ffffff;
   }
   
   /* Main content */
   .about-content {
     flex: 1;
-    padding: 60px 30px;
+    padding: 30px 30px;
   }
   
   /* Developers Section */
@@ -55,8 +63,8 @@
     font-size: 38px;
     color: #000000;
     font-weight: bold;
-    margin-top: 90px;
-    margin-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 30px;
   }
   
   /* Grid layout */
